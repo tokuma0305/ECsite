@@ -9,5 +9,9 @@ class EndUser < ApplicationRecord
   validates :firstname, presence: true
   validates :zipcode, presence: true
   validates :address, presence: true
+  def active_for_authentication?
+    super && (self.is_deleted == false)
+  end
   validates :phone_number, presence: true
+
 end
