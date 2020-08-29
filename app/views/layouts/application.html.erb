@@ -15,7 +15,7 @@
           LOGO
           <% end %>
           <%= link_to "マイページ", end_users_path %>
-          商品一覧
+          <%= link_to "商品一覧", items_path %>
           カート
           <%= link_to "ログアウト", destroy_end_user_session_path, method: :delete %>
            <% elsif admin_signed_in? %>
@@ -31,7 +31,7 @@
           <%= link_to root_path, class:"btn btn-default btn-lg" do %>
           LOGO
           <% end %>
-          商品一覧
+          <%= link_to "商品一覧", items_path %>
           <%= link_to "新規登録", new_end_user_registration_path %>
           <%= link_to "ログイン", new_end_user_session_path %>
           <% end %>

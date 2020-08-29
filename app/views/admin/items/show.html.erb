@@ -1,0 +1,12 @@
+<div>商品詳細</div>
+<%= attachment_image_tag @item, :image, size:"50x50" %>
+商品名 <%= @item.name %>
+商品説明 <%= @item.description %>
+ジャンル <%= @item.genre.name %>
+税込価格（税抜価格）1100(1000)
+販売ステータス <% if @item.is_active == true %>
+			販売中
+			<% else %>
+			販売停止中
+			<% end %>
+編集中
