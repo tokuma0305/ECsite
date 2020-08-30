@@ -34,14 +34,6 @@ class DeviseCreateAdmins < ActiveRecord::Migration[5.2]
 
 
       t.timestamps null: false
-      t.string :katakana_lastname, null: false
-      t.string :katakana_firstname, null: false
-      t.string :lastname, null: false
-      t.string :firstname, null: false
-      t.string :zipcode, null: false
-      t.string :address, null: false
-      t.string :phone_number, null: false
-      t.boolean :is_deleted, null: false,  default: false
     end
 
     add_index :admins, :email,                unique: true

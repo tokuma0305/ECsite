@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  namespace :admin do
+ namespace :admin do
       get "homes/top" => "homes#top"
       resources :end_users, only: [:index]
       resources :genres, only: [:index, :create, :edit, :update]
