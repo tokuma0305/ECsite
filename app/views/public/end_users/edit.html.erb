@@ -1,40 +1,44 @@
-<div>登録情報編集</div>
-<%= form_for(@end_user,url: end_users_path) do |f| %>
-<table>
-<tr>
-<td>名前</td>
-<td>（姓）</td>
-<td><%= f.text_field :lastname %></td>
-<td>（名）</td>
-<td><%= f.text_field :firstname %></td>
-</tr>
-<tr>
-<td>フリガナ</td>
-<td>（セイ）</td>
-<td><%= f.text_field :katakana_lastname %></td>
-<td>(メイ）</td>
-<td><%= f.text_field :katakana_firstname %></td>
-</tr>
-<tr>
-<td>メールアドレス</td>
-<td></td>
-<td><%= f.email_field :email %></td>
-</tr>
-<tr>
-<td>住所</td>
-<td></td>
-<td><%= f.text_field :address %></td>
-</tr>
-<tr>
-<td>電話番号</td>
-<td></td>
-<td><%= f.text_field :phone_number %></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><%= f.submit "編集内容を保存する", class: "btn btn-primary" %></td>
-<td><%= link_to "退会する", end_users_confirm_path %></td>
-</tr>
-</table>
-<% end %>
+<div class="container">
+    <p class="mypage">登録情報編集</p>
+    <%= form_for(@end_user,url: end_users_path) do |f| %>
+    <table class="personal">
+        <tr>
+            <td>名前</td>
+            <td>（姓）</td>
+            <td class="space"><%= f.text_field :lastname %></td>
+            <td class="right">（名）</td>
+            <td class="space"><%= f.text_field :firstname %></td>
+        </tr>
+        <tr>
+            <td>フリガナ</td>
+            <td>（セイ）</td>
+            <td class="space"><%= f.text_field :katakana_lastname %></td>
+            <td class="right">(メイ）</td>
+            <td class="space"><%= f.text_field :katakana_firstname %></td>
+        </tr>
+        <tr>
+            <td>メールアドレス</td>
+            <td></td>
+            <td class="space"><%= f.email_field :email %></td>
+        </tr>
+        <tr>
+            <td>住所</td>
+            <td></td>
+            <td class="space"><%= f.text_field :address %></td>
+        </tr>
+        <tr>
+            <td>電話番号</td>
+            <td></td>
+            <td class="space"><%= f.text_field :phone_number %></td>
+        </tr>
+    </table>
+    <div class="edit">
+        <%= f.submit "編集内容を保存する", class: "btn btn-primary" %>
+    </div>
+    <% end %>
+    <div class="status">
+        <%= link_to end_users_confirm_path, class: "btn btn-danger btn-sm" do %>
+        退会する
+        <% end %>
+    </div>
+</div>

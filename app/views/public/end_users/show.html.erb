@@ -1,48 +1,51 @@
 <div class="container">
-	<div class="row">
-		<div class="mypage">
-			マイページ
-		</div>
-		   <span>登録情報</span>
-			<span><%= link_to edit_end_users_path, class:"btn btn-primary btn-lg" do %>
-				編集する
-				<% end %>
-			</span>
-			<span><%= link_to edit_end_users_path, class:"btn btn-primary btn-lg" do %>
-				パスワードを変更する
-				<% end %>
-				</span>
-			<table>
-				<tr>
-					<td>氏名</td>
-					<td><%= @end_user.lastname %><%= @end_user.firstname %></td>
-				</tr>
-				<tr>
-					<td>カナ</td>
-					<td><%= @end_user.katakana_lastname %><%= @end_user.katakana_firstname %></td>
-				</tr>
-				<tr>
-					<td>郵便番号</td>
-					<td><%= @end_user.zipcode %></td>
-				</tr>
-				<tr>
-					<td>住所</td>
-					<td><%= @end_user.address %></td>
-				</tr>
-				<tr>
-					<td>電話番号</td>
-					<td><%= @end_user.phone_number %></td>
-				</tr>
-				<tr>
-					<td>メールアドレス</td>
-					<td><%= @end_user.email %></td>
-				</tr>
-			</table>
-			<span>
-				配送先
-				一覧を見る
-			</span>
-			<span>
-				注文履歴
-				一覧をみる
-			</span>
+    <p class="mypage">
+        マイページ
+    </p>
+    <div class="signup">
+        <span class="info">登録情報</span>
+        <span>
+            <%= link_to edit_end_users_path, class:"btn btn-primary btn-sm" do %>
+            編集する
+            <% end %>
+        </span>
+        <span>
+            <%= link_to edit_end_users_path, class:"btn btn-primary btn-sm" do %>
+            パスワードを変更する
+            <% end %>
+        </span>
+    </div>
+    <table class="table table-bordered">
+        <tr>
+            <td class="silver">氏名</td>
+            <td><%= @end_user.lastname %><%= @end_user.firstname %></td>
+        </tr>
+        <tr>
+            <td class="silver">カナ</td>
+            <td><%= @end_user.katakana_lastname %><%= @end_user.katakana_firstname %></td>
+        </tr>
+        <tr>
+            <td class="silver">郵便番号</td>
+            <td><%= @end_user.zipcode %></td>
+        </tr>
+        <tr>
+            <td class="silver">住所</td>
+            <td><%= @end_user.address %></td>
+        </tr>
+        <tr>
+            <td class="silver">電話番号</td>
+            <td><%= @end_user.phone_number %></td>
+        </tr>
+        <tr>
+            <td class="silver">メールアドレス</td>
+            <td><%= @end_user.email %></td>
+        </tr>
+    </table>
+    <span>
+        配送先
+        一覧を見る
+    </span>
+    <span>
+        注文履歴
+        一覧をみる
+    </span>

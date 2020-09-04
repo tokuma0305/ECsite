@@ -13,5 +13,5 @@ class EndUser < ApplicationRecord
     super && (self.is_deleted == false)
   end
   validates :phone_number, presence: true
-
+  has_many :cart_items
 end

@@ -13,9 +13,112 @@
  *= require_tree .
  *= require_self
  */
- @import "bootstrap-sprockets";
+@import "bootstrap-sprockets";
 @import "bootstrap";
-.item{
+header{
+    height: 80px;
+    border-bottom: solid black 1px;
+}
+.list{
+    padding-left:3%;
     float: left;
-    padding-left: 5%;
+    margin-top: 15px;
+}
+.first{
+    padding-left: 60%;
+    float: left;
+    margin-top: 15px;
+}
+.logo{
+    margin: 15px;
+    float: left;
+}
+.mypage{
+    margin-top: 40px;
+    margin-left:100px;
+    margin-bottom: 40px;
+    width: 120px;
+    background-color:silver;
+    font-size: 20px;
+    text-align: center;
+}
+.info{
+    font-weight: bolder;
+    padding-right: 15px;
+}
+.signup{
+    margin-bottom: 20px;
+}
+.silver{
+    background-color: silver;
+}
+.space{
+    padding-bottom: 5px;
+}
+.right{
+    text-align: right;
+}
+.edit{
+    float: left;
+    margin-left:10%;
+
+}
+.status{
+    float: left;
+    padding-left: 15%;
+}
+.personal{
+    margin-bottom: 20px;
+}
+.confirm{
+    padding-top: 150px;
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+
+}
+.item{
+    font-weight: bold;
+}
+.Image{
+    float: left;
+    margin-top: 150px;
+    margin-left: 100px;
+}
+.topic{
+    float: left;
+    margin-left:50px;
+    margin-top: 150px;
+}
+.money{
+    padding-top: 30px;
+    padding-bottom: 50px;
+    font-size: 20px;
+}
+.number{
+    padding-right: 20px;
+}
+.shopping{
+    float: left;
+    margin-top: 40px;
+    margin-left:100px;
+    margin-bottom: 40px;
+    background-color:silver;
+    font-size: 20px;
+    
+}
+.cart{
+    float: left;
+    margin-top: 40px;
+    margin-left:700px;
+    margin-bottom: 40px;
+    
+}
+.shop{
+    float: left;
+    padding-right: 62%;
+}
+.a{
+    width: 300px;
+    float: left;
 }

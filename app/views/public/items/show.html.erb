@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-1">
+        </div>
+        <div class="col-lg-11">
+            <p class="Image">
+                <%= attachment_image_tag @item, :image, size:"400x200" %>
+            </p>
+            <div class="topic">
+                <h2>
+                    <%= @item.name %>
+                </h2>
+                <p>
+                    <%= @item.description %>
+                </p>
+                <p class="money">
+                    <%= addTax(@item.price,1.1) %>（税込）
+                </p>
+                <%= form_for @cart_item, url:cart_items_path do |f| %>
+                <%= f.hidden_field :item_id, value: @item.id %>
+                <span class="number">
+                    <%= f.select :amount, ['1', '2','3','4','5','6','7','8','9','10'], {include_blank: '個数選択'} %>
+                </span>
+                <span>
+                    <%= f.submit "カートに入れる", class:"btn btn-primary" %>
+                </span>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>

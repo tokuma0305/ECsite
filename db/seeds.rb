@@ -9,3 +9,15 @@ Admin.create!(
     email: "a@a",
     password: "aaaaaa"
 )
+Genre.create(
+    name:"ケーキ"
+)
+Genre.create(
+    name:"クッキー"
+)
+Genre.create(
+    name:"ドーナツ"
+)
+Item.create(
+    name:"プレミアムケーキ"
+)
