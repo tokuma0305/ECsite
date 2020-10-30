@@ -1,0 +1,55 @@
+<p class="Order">注文情報確認</p>
+<%= form_with(model: @order, local: true) do |f| %>
+<table class="table table-bordered">
+    <tr>
+        <th>商品名</th>
+        <th>単価（税込）</th>
+        <th>数量</th>
+        <th>小計</th>
+    </tr>
+    <% @sum = 0 %>
+    <% @cart_items.each do |cart_item| %>
+    <tr>
+        <td>
+            <%= attachment_image_tag cart_item.item, :image, size:"50x50" %>
+            <%= cart_item.item.name %>
+        </td>
+        <td><%= addTax(cart_item.item.price,1.1) %></td>
+        <td><%= cart_item.amount %></td>
+        <td><%= subtotal(cart_item.item.price,1.1,cart_item.amount) %></td>
+    </tr>
+</table>
+<table class="table table-bordered">
+    <tr>
+        <td>送料</td>
+        <td><%= @order.postage %></td>
+    </tr>
+    <tr>
+        <td>商品合計</td>
+        <td><%= @sum += subtotal(cart_item.item.price,1.1,cart_item.amount).to_i %></td>
+    </tr>
+    <tr>
+        <td>請求金額</td>
+        <td><%= @sum + @order.postage %>
+</table>
+<% end %>
+<h2>支払い方法</h2>
+<span><%= @order.paymethod_i18n %></span>
+<h2>お届け先</h2>
+<span>
+    <%= @order.zipcode %>
+    <%= @order.address %>
+    <%= @order.addressee %>
+</span>
+<div>
+    <%= f.hidden_field :paymethod, value: @order.paymethod %>
+    <%= f.hidden_field :zipcode, value: @order.zipcode %>
+    <%= f.hidden_field :address, value: @order.address %>
+    <%= f.hidden_field :end_user_id, value: current_end_user.id %>
+    <%= f.hidden_field :addressee, value: @order.addressee %>
+    <%= f.hidden_field :order_status, value: @order.order_status %>
+    <%= f.hidden_field :postage, value: @order.postage %>
+    <%= f.hidden_field :total_payment, value: @sum + @order.postage %>
+    <%= f.submit "購入を確定する", class:"btn btn-success" %>
+</div>
+<% end %>

@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
         when Admin
             admin_homes_top_path
         when EndUser
-          end_users_path
+            end_users_path
         end
     end
     def after_sign_out_path_for(resource)

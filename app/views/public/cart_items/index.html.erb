@@ -44,6 +44,8 @@
             <td width="50%"><%= @sum.round %></td>
         </tr>
     </table>
-    <div>
+    <div class="success">
+        <%= link_to new_order_path, class:"btn btn-success" do %>
         情報入力に進む
+        <% end %>
     </div>
