@@ -1,0 +1,43 @@
+<div class="silver">
+    <span>
+        購入者
+    </span>
+    <%= @order.end_user.name %>
+    <span>配送先</span>
+    <span>
+        <%= @order.zipcode %>
+    </span>
+    <span>
+        <%= @order.address %>
+    </span>
+    <span>
+        <%= @order.addressee %>
+    </span>
+    <span>
+        <span>
+            支払い方法
+        </span>
+        <%= @order.paymethod_i.18n %>
+        <span>
+            <span>
+                注文ステータス
+            </span>
+            <span>
+                <%= f. %>
+                <% f.collection_select() %>
+            </span>
+            <table class="table table-bordered">
+                <tr>
+                    <th>商品</th>
+                    <th>単価（税込）</th>
+                    <th>数量</th>
+                    <th>小計</th>
+                    <th>製作ステータス</th>
+                </tr>
+                <%= @order_details.each do |order_detail| %>
+                <tr>
+                    <td><%= order_detail.item.name %></td>
+                    <td><%= order_detail.prce_include_tax %></td>
+                    <td><%= order_detail.amount %></td>
+                    <td><%= f.collection_select (order_detail.product_status_i18n %></td>
+                    <td><%= f.submit "更新" %></td>
