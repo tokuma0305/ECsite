@@ -31,6 +31,7 @@ class Public::OrdersController < ApplicationController
     end
     def confirm
         @order = Order.new
+        @order.order_details.build
         @end_user = current_end_user
         @cart_items = CartItem.all
         @order.paymethod = params[:order][:paymethod]
@@ -58,6 +59,6 @@ class Public::OrdersController < ApplicationController
     private
     def order_params
         params.require(:order).permit(:paymethod, :address, :zipcode, :end_user_id, :addressee, :total_payment, :postage, :order_status,
-        order_details_attributes:{:item_id, :order_id, :amount, :price_include_tax, :product_status})
+        order_detail_attributes:[:item_id, :order_id, :amount, :price_include_tax, :product_status])
     end
 end

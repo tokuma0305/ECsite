@@ -51,5 +51,16 @@
     <%= f.hidden_field :postage, value: @order.postage %>
     <%= f.hidden_field :total_payment, value: @sum + @order.postage %>
     <%= f.submit "購入を確定する", class:"btn btn-success" %>
+    <%= f.fields_for :order_details do |detail| %>
+    <% @sum = 0 %>
+    <% @cart_items.each do |cart_item| %>
+    <%= detail.hidden_field :item_id, value: cart_item.item.id%>
+    <%= detail.hidden_field :order_id, value: @order.id %>
+    <%= detail.hidden_field :product_status, value: 0 %>
+    <%= detail.hidden_field :amount, value: cart_item.amount %>
+    <% @sum  += cart_item.item.price * cart_item.amount * 1.1 %>
+    <%= detail.hidden_field :price_include_tax, value: @sum.round %>
+    <% end %>
+    <% end %>
 </div>
 <% end %>

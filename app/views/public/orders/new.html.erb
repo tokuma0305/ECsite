@@ -18,7 +18,7 @@
 <%= f.collection_select(:address, @address, :id, :view_address) %>
 <%= f.radio_button :address_option,2 %>新しいお届け先
 <table>
-    <%= f.field_for :add do |a| %>
+    <%= f.fields_for :add do |a| %>
     <tr>
         <td>郵便番号（ハイフンなし）</td>
         <td><%= a.text_field :zipcode %></td>
