@@ -11,6 +11,8 @@
     </tr>
     <tr>
         <td><%= order.created_at %></td>
-        <td><%= order.end_user.name %></td>
-        <td><%= @order_detail.amount %></td>
-        <td><%= order.paymethod_i18n %></td>
+        <td><%= order.end_user.lastname %><%= order.end_user.firstname %></td>
+        <td><%= order.order_details.sum(:amount) %></td>
+        <td><%= order.order_status_i18n %></td>
+    <tr>
+<% end %>
